@@ -1,0 +1,35 @@
+
+.title-wrapper {
+  display: flex;
+  padding: 0px 30px;
+}
+
+.textbox-wrapper {
+  display: flex;
+  padding: 0px 30px;
+  align-items: flex-start;
+  gap: 20px;
+  align-self: stretch;
+}
+
+.button-wrapper {
+  display: flex;
+  padding: 10px 30px;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 15px;
+  align-self: stretch;
+}
+
+.page-title {
+  display: flex;
+align-items: center;
+gap: 10px;
+flex: 1 0 0;
+align-self: stretch;
+}
+
+
+/* Home.css */
+
+
