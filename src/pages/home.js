@@ -13,15 +13,32 @@ function Home() {
   const [result, setResult] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const handleCheck = () => {
-    setLoading(true);         // ⏳ 로딩 시작
-    setResult(input);            // 결과 초기화
+  const handleCheck = async () => {
+    if (!input.trim()) return;
+    setLoading(true);
+    setResult("");
 
-    setTimeout(() => {
-      setResult(input);       // 💡 실제론 여기에 API 응답 넣기
-      setLoading(false);      // ✅ 로딩 끝
-    }, 2000); // 임시 2초 지연 (나중엔 axios 호출)
-  };  
+    try {
+      const response = await fetch("https://korrect-back.onrender.com/api/correct", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ sentence: input }),
+      });
+
+      if (!response.ok) {
+        throw new Error("서버 오류 발생");
+      }
+
+      const data = await response.json();
+      setResult(data.corrected); // ✅ 백엔드에서 받은 교정된 문장
+    } catch (err) {
+      setResult("❌ 오류 발생: " + err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
 
   const handleReset = () => {
