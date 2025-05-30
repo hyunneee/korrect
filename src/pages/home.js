@@ -60,7 +60,7 @@ function Home() {
           {loading && (
             <div className="loading-ui">
               <Spinner />
-              <div className="loading-text">맞춤법 검사를 진행 중이에요</div>
+              <div className="loading-text">맞춤법 검사를 진행 중이에요.</div>
             </div>
           )}
         </TextBox>
