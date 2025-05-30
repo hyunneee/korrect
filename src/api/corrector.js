@@ -1,6 +1,6 @@
 export async function correctText(input) {
   try {
-    const response = await fetch('https://korrect-back.onrender.com/api/correct', {
+    const response = await fetch('https://korrect-back.onrender.com/api/corrector', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
