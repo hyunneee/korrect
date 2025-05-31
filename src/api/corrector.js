@@ -5,7 +5,7 @@ export async function correctText(input) {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ sentence: input }),
+      body: JSON.stringify({ sentence: input, mode: mode }),
     });
 
     if (!response.ok) {
