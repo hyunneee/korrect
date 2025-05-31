@@ -18,21 +18,17 @@ function Home() {
     setLoading(true);
     setResult("");
 
+    const mode = tab === "일상용" ? "casual" : "formal";
+
     try {
       const response = await fetch("https://korrect-back.onrender.com/api/correct", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ sentence: input }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ sentence: input, mode: mode }),
       });
 
-      if (!response.ok) {
-        throw new Error("서버 오류 발생");
-      }
-
       const data = await response.json();
-      setResult(data.corrected); // ✅ 백엔드에서 받은 교정된 문장
+      setResult(data.corrected);
     } catch (err) {
       setResult("❌ 오류 발생: " + err.message);
     } finally {
