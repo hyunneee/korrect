@@ -1,9 +1,19 @@
 /* TextBox.css - 정리된 최종 버전 */
 
-.textbox-container {
+.textbox {
+  position: relative;
+  width: 100%;
+  flex: 1;
   display: flex;
-  width: 385px;
-  height: 250px;
+  flex-direction: column;
+}
+
+
+.textbox-container {  
+  display: flex;
+  width: 100%;
+  /* max-width: 385px; */
+  height: 450px;
   padding: 10px;
   flex-direction: column;
   align-items: flex-start;
@@ -12,8 +22,8 @@
   flex: 1;
   min-width: 0;
   border-radius: 6px;
-  border: 1px solid #555;
-  background-color: #fce4ec;
+  border: 1px solid white;
+  background-color: #eddbf0;
   box-sizing: border-box;
   font-family: 'Pretendard-Regular';
   font-weight: 500;
@@ -23,21 +33,13 @@
   background: #FFF;
   border: 1px solid #555;
 }
-.textbox {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
 
 .textbox-area {
   display: flex;
   flex-direction: column;
   align-items: center;
   /* width: 165%; */
-  height:max-content;
+  height: 100%;
   flex-shrink: 0;
   flex: 1;
   min-width: 0;
@@ -52,7 +54,7 @@
 }
 
 .textbox-area.focused {
-  border: 1px solid #f44336;
+  border: 1px solid #642F6C;
 }
 
 .textbox-area.loading {
@@ -111,6 +113,6 @@
 
 .loading-text {
   font-size: 14px;
-  color: #555;
+  color: #333;
   font-family: 'Pretendard-Regular';
 }
