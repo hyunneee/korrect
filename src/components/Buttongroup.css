@@ -32,19 +32,21 @@
 }
 
 .button-basic:hover {
-  border: 1px solid #FC2947;
+  border: 1px solid #642f6c;
   background: #ECECEC;
-  color: #FC2947;
+  color: #642f6c;
 }
 
 /* 강조 버튼 */
 .button-highlight {
-  border: 1px solid #FC2947;
-  background: #FC2947;
+  border: 1px solid #642f6c;
+  background:#642f6c;
   color: white;
 }
 
 .button-highlight:hover {
-  background: #e32540;
+  border: 1px solid #642f6c;
+  background: #642f6c;
+  font-weight: bold;
   color: white;
 }

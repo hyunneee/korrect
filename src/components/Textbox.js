@@ -1,7 +1,7 @@
 import './Textbox.css';
 import { useState } from 'react';
 
-function TextBox({ title, value, onChange,maxLength=300, readOnly = false, onClear,children }) {
+function TextBox({ title, value, onChange,maxLength=1000, readOnly = false, onClear,children }) {
   const [focused, setFocused] = useState(false);
   
   // ✅ focused 클래스는 읽기 전용이 아닐 때만 적용
